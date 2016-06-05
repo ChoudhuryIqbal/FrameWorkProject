@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +28,12 @@ public class CommonAPI {
 
     @AfterMethod
     public void cleanUp() {
-        driver.quit();
+        driver.close();
     }
+    public void clickById(String locator){
+        driver.findElement(By.id(locator)).click();
+    }
+
 
     public void clickByCss(String locator) {
         driver.findElement(By.cssSelector(locator)).click();
@@ -52,7 +54,9 @@ public class CommonAPI {
     public void takeEnterKeys(String locator) {
         driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);
     }
-
+public void typeById(String locator,String value){
+    driver.findElement(By.id(locator)).sendKeys(value);
+}
     public List<WebElement> getListOfWebElements(String locator) {
 
         List<WebElement> list = new ArrayList<WebElement>();
@@ -75,5 +79,8 @@ public class CommonAPI {
         Select select = new Select(element);
         select.selectByVisibleText(value);
     }
+
+
+
 
 }

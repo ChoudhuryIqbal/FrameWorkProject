@@ -23,8 +23,8 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Amazon" />
+        <module name="BankOfAmerica" />
         <module name="Cigna" />
-        <module name="Citibank" />
         <module name="Cnn" />
         <module name="Facebook" />
         <module name="Generic" />
@@ -32,6 +32,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Amazon" target="1.5" />
+      <module name="BankOfAmerica" target="1.5" />
       <module name="Cigna" target="1.5" />
       <module name="Citibank" target="1.5" />
       <module name="Cnn" target="1.5" />
