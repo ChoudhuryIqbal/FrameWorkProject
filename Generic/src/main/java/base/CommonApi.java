@@ -73,11 +73,20 @@ public class CommonAPI {
 
     @AfterMethod
     public void cleanUp() {
-        driver.quit();
+        driver.close();
     }
 
     public void clickByCss(String locator) {
         driver.findElement(By.cssSelector(locator)).click();
+    }
+
+
+    public void clearInputField(String locator){
+        driver.findElement(By.cssSelector(locator)).clear();
+    }
+
+    public void sleepFor(int sec) throws InterruptedException{
+        Thread.sleep(sec*1000);
     }
 
     public void clickByXpath(String locator) {
