@@ -5,6 +5,8 @@ package database;
  */
 
 
+import base.CommonAPI;
+
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
@@ -40,6 +42,7 @@ public class DBConnect {
         // Setup the connection with the DB
         connect = DriverManager.getConnection(url, userName, passWord);
         System.out.println("Database connected");
+
 
     }
 

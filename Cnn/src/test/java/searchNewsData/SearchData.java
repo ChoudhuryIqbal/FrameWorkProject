@@ -26,9 +26,23 @@ public class SearchData {
         return newsList;
     }
 
+    public String[] getActionFromExcelFile() throws IOException{
+        String path=System.getProperty("user.dir")+"/data/file1.xls";
+        String [] news=dataReader.fileReader(path);
+        return news;
+    }
+    /*
+public List<String> getNewsDataFromDB(String tableName,String columnName)throws Exception{
+    List<String >  newsList=dbConnect.readDataBase(tableName,columnName);
+    return newsList;
+}
+
+    public List<String> getActionStepsDataFromDB(String tableName,String columnName) throws Exception{
+        List<String> actionList=dbConnect.readDataBase(tableName,columnName);
+        return actionList;
+    }
 
 
 
-
-
+*/
 }
