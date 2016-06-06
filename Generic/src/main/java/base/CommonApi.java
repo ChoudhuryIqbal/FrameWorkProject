@@ -46,6 +46,11 @@ public class CommonAPI {
         driver.manage().window().maximize();
     }
 
+    public void typeAndSubmit(String locator,String word){
+        driver.findElement(By.cssSelector(locator)).sendKeys(word);
+        driver.findElement(By.cssSelector(locator)).submit();
+    }
+
     public WebDriver getLocalDriver(String browserName){
         if(browserName.equalsIgnoreCase("chrome")){
             System.setProperty("webdriver.chrome.driver","Generic/browser-driver/chromedriver.exe");
@@ -74,7 +79,7 @@ public class CommonAPI {
     }
     }
 
-    @AfterMethod
+@AfterMethod
     public void cleanUp() {
         driver.close();
     }
@@ -226,4 +231,9 @@ public void waitUntilSelectable(By locator){
     WebDriverWait wait=new WebDriverWait(driver,10);
     boolean element=wait.until(ExpectedConditions.elementToBeSelected(locator));
 }
+
+    public void upLoadFile(String locator,String path){
+        driver.findElement(By.cssSelector(locator)).sendKeys(path);
+
+    }
 }

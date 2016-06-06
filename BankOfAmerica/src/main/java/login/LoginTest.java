@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
  */
 public class LoginTest extends CommonAPI {
 
-    @Test
+
     public void login() throws InterruptedException
     {
         typeById("onlineId1","123nafees");
